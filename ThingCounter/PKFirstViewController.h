@@ -10,4 +10,13 @@
 
 @interface PKFirstViewController : UIViewController
 
+@property (strong, nonatomic) IBOutlet UIButton *countUpButton;
+@property (strong, nonatomic) IBOutlet UIButton *countDownButton;
+@property (strong, nonatomic) IBOutlet UIButton *saveButton;
+
+- (IBAction)countUpButtonTapped:(id)sender;
+- (IBAction)countDownButtonTapped:(id)sender;
+- (IBAction)resetButtonTapped:(id)sender;
+- (IBAction)saveButtonWasTapped:(id)sender;
+
 @end
