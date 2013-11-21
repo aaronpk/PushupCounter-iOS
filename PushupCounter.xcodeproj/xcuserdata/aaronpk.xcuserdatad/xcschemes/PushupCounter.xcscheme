@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "0FB19BB8180B410600214EFC"
-               BuildableName = "ThingCounter.app"
-               BlueprintName = "ThingCounter"
-               ReferencedContainer = "container:ThingCounter.xcodeproj">
+               BuildableName = "PushupCounter.app"
+               BlueprintName = "PushupCounter"
+               ReferencedContainer = "container:PushupCounter.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -28,24 +28,14 @@
       shouldUseLaunchSchemeArgsEnv = "YES"
       buildConfiguration = "Debug">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "0FB19BDF180B410600214EFC"
-               BuildableName = "ThingCounterTests.xctest"
-               BlueprintName = "ThingCounterTests"
-               ReferencedContainer = "container:ThingCounter.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "0FB19BB8180B410600214EFC"
-            BuildableName = "ThingCounter.app"
-            BlueprintName = "ThingCounter"
-            ReferencedContainer = "container:ThingCounter.xcodeproj">
+            BuildableName = "PushupCounter.app"
+            BlueprintName = "PushupCounter"
+            ReferencedContainer = "container:PushupCounter.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -62,9 +52,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "0FB19BB8180B410600214EFC"
-            BuildableName = "ThingCounter.app"
-            BlueprintName = "ThingCounter"
-            ReferencedContainer = "container:ThingCounter.xcodeproj">
+            BuildableName = "PushupCounter.app"
+            BlueprintName = "PushupCounter"
+            ReferencedContainer = "container:PushupCounter.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -80,9 +70,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "0FB19BB8180B410600214EFC"
-            BuildableName = "ThingCounter.app"
-            BlueprintName = "ThingCounter"
-            ReferencedContainer = "container:ThingCounter.xcodeproj">
+            BuildableName = "PushupCounter.app"
+            BlueprintName = "PushupCounter"
+            ReferencedContainer = "container:PushupCounter.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
