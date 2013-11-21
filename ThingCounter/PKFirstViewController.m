@@ -22,6 +22,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     count = 0;
+    [self.spinner stopAnimating];
     [self updateButtonValue];
 }
 
@@ -61,6 +62,7 @@
         @"name": [NSString stringWithFormat:@"Just did %d push-ups!", count]
     };
     NSLog(@"Making post request");
+    [self.spinner startAnimating];
     
     if(manager == nil) {
         manager = [[AFHTTPSessionManager manager] initWithBaseURL:[NSURL URLWithString:@"http://example.com"]];
@@ -71,9 +73,13 @@
     [manager POST:@"/micropub/pushups.php"
                  parameters:parameters
           success:^(NSURLSessionTask *task, NSDictionary *responseObject) {
+              [self.spinner stopAnimating];
+              count = 0;
+              [self updateButtonValue];
               NSLog(@"JSON: %@", responseObject);
           }
           failure:^(NSURLSessionTask *task, NSError *error) {
+              [self.spinner stopAnimating];
               NSLog(@"Error: %@", error);
           }];
     }
