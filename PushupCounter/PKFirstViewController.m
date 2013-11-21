@@ -8,6 +8,7 @@
 
 #import "PKFirstViewController.h"
 #import "AFHTTPSessionManager.h"
+#import "Config.h"
 
 @interface PKFirstViewController ()
 @end
@@ -65,13 +66,13 @@
     [self.spinner startAnimating];
     
     if(manager == nil) {
-        manager = [[AFHTTPSessionManager manager] initWithBaseURL:[NSURL URLWithString:@"http://example.com"]];
+        NSURL *endpoint = [NSURL URLWithString:APIEndpointUrl];
+        manager = [[AFHTTPSessionManager manager] initWithBaseURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@://%@", endpoint.scheme, endpoint.host]]];
         manager.requestSerializer = [AFHTTPRequestSerializer serializer];
         manager.responseSerializer = [AFHTTPResponseSerializer serializer];
     }
 
-    [manager POST:@"/micropub/pushups.php"
-                 parameters:parameters
+    [manager POST:APIEndpointUrl parameters:parameters
           success:^(NSURLSessionTask *task, NSDictionary *responseObject) {
               [self.spinner stopAnimating];
               count = 0;

@@ -36,6 +36,7 @@
 		0FA2A625183E263E000A923B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = PushupCounter/en.lproj/InfoPlist.strings; sourceTree = SOURCE_ROOT; };
 		0FA2A628183E264C000A923B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = PushupCounter/Base.lproj/Main_iPad.storyboard; sourceTree = SOURCE_ROOT; };
 		0FA2A62A183E264C000A923B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = PushupCounter/Base.lproj/Main_iPhone.storyboard; sourceTree = SOURCE_ROOT; };
+		0FA2A62D183E2781000A923B /* Config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Config.h; path = PushupCounter/Config.h; sourceTree = SOURCE_ROOT; };
 		0FB19BB9180B410600214EFC /* PushupCounter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PushupCounter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FB19BBC180B410600214EFC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		0FB19BBE180B410600214EFC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -93,6 +94,7 @@
 		0FB19BC2180B410600214EFC /* PushupCounter */ = {
 			isa = PBXGroup;
 			children = (
+				0FA2A62D183E2781000A923B /* Config.h */,
 				0FA2A616183E2608000A923B /* PKAppDelegate.h */,
 				0FA2A617183E2608000A923B /* PKAppDelegate.m */,
 				0FA2A629183E264C000A923B /* Main_iPhone.storyboard */,
