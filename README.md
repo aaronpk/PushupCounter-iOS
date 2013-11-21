@@ -1,5 +1,9 @@
 ## Pushup Counter
 
+![Icon](Icon/pushup-counter-icon.png)
+
+![Screenshot](Icon/screenshot.png)
+
 ### Setup
 
 `pod install`
