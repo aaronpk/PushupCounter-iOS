@@ -10,12 +10,15 @@
 		0FA2A615183E25F9000A923B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FA2A614183E25F9000A923B /* Images.xcassets */; };
 		0FA2A618183E2608000A923B /* PKAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FA2A617183E2608000A923B /* PKAppDelegate.m */; };
 		0FA2A61D183E2613000A923B /* PKFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FA2A61A183E2613000A923B /* PKFirstViewController.m */; };
-		0FA2A61E183E2613000A923B /* PKSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FA2A61C183E2613000A923B /* PKSecondViewController.m */; };
 		0FA2A620183E261A000A923B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FA2A61F183E261A000A923B /* main.m */; };
 		0FA2A622183E2623000A923B /* PushupCounter-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0FA2A621183E2623000A923B /* PushupCounter-Info.plist */; };
 		0FA2A626183E263E000A923B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0FA2A624183E263E000A923B /* InfoPlist.strings */; };
-		0FA2A62B183E264C000A923B /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FA2A627183E264C000A923B /* Main_iPad.storyboard */; };
-		0FA2A62C183E264C000A923B /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FA2A629183E264C000A923B /* Main_iPhone.storyboard */; };
+		0FAC1879186DED3F00560D30 /* PKURLHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FAC1878186DED3F00560D30 /* PKURLHelpers.m */; };
+		0FAC187F186E8BDD00560D30 /* LOLDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FAC187E186E8BDD00560D30 /* LOLDatabase.m */; };
+		0FAC1882186E8BFE00560D30 /* PKDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FAC1881186E8BFE00560D30 /* PKDataManager.m */; };
+		0FAC1884186E8C1100560D30 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FAC1883186E8C1100560D30 /* libsqlite3.0.dylib */; };
+		0FAC1887186E908500560D30 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FAC1885186E908500560D30 /* Main.storyboard */; };
+		0FAC188A186E92DC00560D30 /* PKFlipsideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FAC1889186E92DC00560D30 /* PKFlipsideViewController.m */; };
 		0FB19BBD180B410600214EFC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FB19BBC180B410600214EFC /* Foundation.framework */; };
 		0FB19BBF180B410600214EFC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FB19BBE180B410600214EFC /* CoreGraphics.framework */; };
 		0FB19BC1180B410600214EFC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FB19BC0180B410600214EFC /* UIKit.framework */; };
@@ -28,15 +31,20 @@
 		0FA2A617183E2608000A923B /* PKAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PKAppDelegate.m; path = PushupCounter/PKAppDelegate.m; sourceTree = SOURCE_ROOT; };
 		0FA2A619183E2613000A923B /* PKFirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PKFirstViewController.h; path = PushupCounter/PKFirstViewController.h; sourceTree = SOURCE_ROOT; };
 		0FA2A61A183E2613000A923B /* PKFirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PKFirstViewController.m; path = PushupCounter/PKFirstViewController.m; sourceTree = SOURCE_ROOT; };
-		0FA2A61B183E2613000A923B /* PKSecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PKSecondViewController.h; path = PushupCounter/PKSecondViewController.h; sourceTree = SOURCE_ROOT; };
-		0FA2A61C183E2613000A923B /* PKSecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PKSecondViewController.m; path = PushupCounter/PKSecondViewController.m; sourceTree = SOURCE_ROOT; };
 		0FA2A61F183E261A000A923B /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = PushupCounter/main.m; sourceTree = SOURCE_ROOT; };
 		0FA2A621183E2623000A923B /* PushupCounter-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "PushupCounter-Info.plist"; path = "PushupCounter/PushupCounter-Info.plist"; sourceTree = SOURCE_ROOT; };
 		0FA2A623183E2628000A923B /* PushupCounter-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "PushupCounter-Prefix.pch"; path = "PushupCounter/PushupCounter-Prefix.pch"; sourceTree = SOURCE_ROOT; };
 		0FA2A625183E263E000A923B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = PushupCounter/en.lproj/InfoPlist.strings; sourceTree = SOURCE_ROOT; };
-		0FA2A628183E264C000A923B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = PushupCounter/Base.lproj/Main_iPad.storyboard; sourceTree = SOURCE_ROOT; };
-		0FA2A62A183E264C000A923B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = PushupCounter/Base.lproj/Main_iPhone.storyboard; sourceTree = SOURCE_ROOT; };
-		0FA2A62D183E2781000A923B /* Config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Config.h; path = PushupCounter/Config.h; sourceTree = SOURCE_ROOT; };
+		0FAC1877186DED3F00560D30 /* PKURLHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKURLHelpers.h; sourceTree = SOURCE_ROOT; };
+		0FAC1878186DED3F00560D30 /* PKURLHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKURLHelpers.m; sourceTree = SOURCE_ROOT; };
+		0FAC187D186E8BDD00560D30 /* LOLDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LOLDatabase.h; sourceTree = "<group>"; };
+		0FAC187E186E8BDD00560D30 /* LOLDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LOLDatabase.m; sourceTree = "<group>"; };
+		0FAC1880186E8BFE00560D30 /* PKDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PKDataManager.h; path = PushupCounter/PKDataManager.h; sourceTree = SOURCE_ROOT; };
+		0FAC1881186E8BFE00560D30 /* PKDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PKDataManager.m; path = PushupCounter/PKDataManager.m; sourceTree = SOURCE_ROOT; };
+		0FAC1883186E8C1100560D30 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
+		0FAC1886186E908500560D30 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = PushupCounter/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
+		0FAC1888186E92DC00560D30 /* PKFlipsideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PKFlipsideViewController.h; path = PushupCounter/PKFlipsideViewController.h; sourceTree = SOURCE_ROOT; };
+		0FAC1889186E92DC00560D30 /* PKFlipsideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PKFlipsideViewController.m; path = PushupCounter/PKFlipsideViewController.m; sourceTree = SOURCE_ROOT; };
 		0FB19BB9180B410600214EFC /* PushupCounter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PushupCounter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FB19BBC180B410600214EFC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		0FB19BBE180B410600214EFC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -51,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0FAC1884186E8C1100560D30 /* libsqlite3.0.dylib in Frameworks */,
 				0FB19BBF180B410600214EFC /* CoreGraphics.framework in Frameworks */,
 				0FB19BC1180B410600214EFC /* UIKit.framework in Frameworks */,
 				0FB19BBD180B410600214EFC /* Foundation.framework in Frameworks */,
@@ -61,6 +70,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0FAC187C186E8BDD00560D30 /* LOLDB */ = {
+			isa = PBXGroup;
+			children = (
+				0FAC187D186E8BDD00560D30 /* LOLDatabase.h */,
+				0FAC187E186E8BDD00560D30 /* LOLDatabase.m */,
+			);
+			name = LOLDB;
+			path = PushupCounter/LOLDB;
+			sourceTree = SOURCE_ROOT;
+		};
 		0FB19BB0180B410600214EFC = {
 			isa = PBXGroup;
 			children = (
@@ -82,6 +101,7 @@
 		0FB19BBB180B410600214EFC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0FAC1883186E8C1100560D30 /* libsqlite3.0.dylib */,
 				0FB19BBC180B410600214EFC /* Foundation.framework */,
 				0FB19BBE180B410600214EFC /* CoreGraphics.framework */,
 				0FB19BC0180B410600214EFC /* UIKit.framework */,
@@ -94,17 +114,20 @@
 		0FB19BC2180B410600214EFC /* PushupCounter */ = {
 			isa = PBXGroup;
 			children = (
-				0FA2A62D183E2781000A923B /* Config.h */,
 				0FA2A616183E2608000A923B /* PKAppDelegate.h */,
 				0FA2A617183E2608000A923B /* PKAppDelegate.m */,
-				0FA2A629183E264C000A923B /* Main_iPhone.storyboard */,
-				0FA2A627183E264C000A923B /* Main_iPad.storyboard */,
+				0FAC1885186E908500560D30 /* Main.storyboard */,
 				0FA2A619183E2613000A923B /* PKFirstViewController.h */,
 				0FA2A61A183E2613000A923B /* PKFirstViewController.m */,
-				0FA2A61B183E2613000A923B /* PKSecondViewController.h */,
-				0FA2A61C183E2613000A923B /* PKSecondViewController.m */,
+				0FAC1888186E92DC00560D30 /* PKFlipsideViewController.h */,
+				0FAC1889186E92DC00560D30 /* PKFlipsideViewController.m */,
+				0FAC1880186E8BFE00560D30 /* PKDataManager.h */,
+				0FAC1881186E8BFE00560D30 /* PKDataManager.m */,
 				0FA2A614183E25F9000A923B /* Images.xcassets */,
 				0FB19BC3180B410600214EFC /* Supporting Files */,
+				0FAC187C186E8BDD00560D30 /* LOLDB */,
+				0FAC1877186DED3F00560D30 /* PKURLHelpers.h */,
+				0FAC1878186DED3F00560D30 /* PKURLHelpers.m */,
 			);
 			name = PushupCounter;
 			path = ThingCounter;
@@ -177,8 +200,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0FA2A615183E25F9000A923B /* Images.xcassets in Resources */,
-				0FA2A62B183E264C000A923B /* Main_iPad.storyboard in Resources */,
-				0FA2A62C183E264C000A923B /* Main_iPhone.storyboard in Resources */,
+				0FAC1887186E908500560D30 /* Main.storyboard in Resources */,
 				0FA2A622183E2623000A923B /* PushupCounter-Info.plist in Resources */,
 				0FA2A626183E263E000A923B /* InfoPlist.strings in Resources */,
 			);
@@ -224,10 +246,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0FAC1879186DED3F00560D30 /* PKURLHelpers.m in Sources */,
 				0FA2A620183E261A000A923B /* main.m in Sources */,
+				0FAC188A186E92DC00560D30 /* PKFlipsideViewController.m in Sources */,
+				0FAC1882186E8BFE00560D30 /* PKDataManager.m in Sources */,
 				0FA2A61D183E2613000A923B /* PKFirstViewController.m in Sources */,
 				0FA2A618183E2608000A923B /* PKAppDelegate.m in Sources */,
-				0FA2A61E183E2613000A923B /* PKSecondViewController.m in Sources */,
+				0FAC187F186E8BDD00560D30 /* LOLDatabase.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,20 +267,12 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		0FA2A627183E264C000A923B /* Main_iPad.storyboard */ = {
+		0FAC1885186E908500560D30 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				0FA2A628183E264C000A923B /* Base */,
+				0FAC1886186E908500560D30 /* Base */,
 			);
-			name = Main_iPad.storyboard;
-			sourceTree = "<group>";
-		};
-		0FA2A629183E264C000A923B /* Main_iPhone.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0FA2A62A183E264C000A923B /* Base */,
-			);
-			name = Main_iPhone.storyboard;
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -345,6 +362,7 @@
 				GCC_PREFIX_HEADER = "PushupCounter/PushupCounter-Prefix.pch";
 				INFOPLIST_FILE = "PushupCounter/PushupCounter-Info.plist";
 				PRODUCT_NAME = PushupCounter;
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -359,6 +377,7 @@
 				GCC_PREFIX_HEADER = "PushupCounter/PushupCounter-Prefix.pch";
 				INFOPLIST_FILE = "PushupCounter/PushupCounter-Info.plist";
 				PRODUCT_NAME = PushupCounter;
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
