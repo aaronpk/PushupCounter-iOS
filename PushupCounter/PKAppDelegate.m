@@ -7,7 +7,6 @@
 //
 
 #import "PKAppDelegate.h"
-#import "PKFirstViewController.h"
 
 @interface PKAppDelegate ()
 @property (strong, nonatomic) NSURL *launchURL;
@@ -17,6 +16,11 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    // Override point for customization after application launch.
+    self.viewController = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"PKFirstViewController"];
+    self.window.rootViewController = self.viewController;
+    [self.window makeKeyAndVisible];
     // Override point for customization after application launch.
     return YES;
 }
@@ -41,10 +45,6 @@
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-    if(self.launchURL) {
-        PKFirstViewController *mainView = (PKFirstViewController *)self.window.rootViewController;
-        [mainView launchAuthViewWithURL:self.launchURL];
-    }
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
@@ -55,7 +55,8 @@
 // App launched from a URL
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
 {
-    self.launchURL = url;
+    [self.viewController launchAuthView];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"auth" object:url];
     return YES;
 }
 

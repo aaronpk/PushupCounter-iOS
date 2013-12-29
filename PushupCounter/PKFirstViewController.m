@@ -12,7 +12,6 @@
 
 @interface PKFirstViewController ()
 @property (strong, nonatomic) NSString *lastEntryKey;
-@property (strong, nonatomic) NSURL *launchedWithAuthURL;
 @end
 
 @implementation PKFirstViewController {
@@ -26,32 +25,24 @@
     count = 0;
     [self updateButtonValue];
     [[PKDataManager sharedManager] requestLocation];
-    self.authViewController = [[PKAuthViewController alloc] initWithNibName:@"PKAuthViewController" bundle:[NSBundle mainBundle]];
+    self.authViewController = [[PKAuthViewController alloc] initWithNibName:@"PKAuthViewController" bundle:nil];
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
-    if(self.launchedWithAuthURL) {
+    if([[NSUserDefaults standardUserDefaults] stringForKey:PKAPIAccessTokenDefaultsName]) {
+        // Already logged in
     } else {
-        if([[NSUserDefaults standardUserDefaults] stringForKey:PKAPIAccessTokenDefaultsName]) {
-            // Already logged in
-        } else {
-            [self launchAuthViewWithURL:nil];
-        }
+        [self launchAuthView];
     }
 }
 
-- (void)launchAuthViewWithURL:(NSURL *)url
+- (void)launchAuthView
 {
-    NSLog(@"presentedViewController: %@", self.presentedViewController);
-    if(self.presentedViewController) {
-        NSLog(@"Modal auth view is already visible");
-    } else {
+    // Launch the auth view if it's not already present
+    // Note that self.presentedViewController is normally actually the Flipside controller
+    if(!self.presentedViewController) {
         [self presentViewController:self.authViewController animated:YES completion:nil];
-    }
-    if(url) {
-        NSLog(@"Processing auth from URL: %@", url);
-        [self.authViewController processAuthRequestFromURL:url];
     }
 }
 

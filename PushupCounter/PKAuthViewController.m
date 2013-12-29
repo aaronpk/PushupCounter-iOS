@@ -21,6 +21,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(processAuthRequestFromURL:) name:@"auth" object:nil];
     }
     return self;
 }
@@ -36,8 +37,9 @@
     [[UIApplication sharedApplication] openURL:url];
 }
 
-- (void)processAuthRequestFromURL:(NSURL *)url
+- (void)processAuthRequestFromURL:(NSNotification *)notification
 {
+    NSURL *url = notification.object;
     NSLog(@"Launched with URL: %@", url);
     
     if([[url host] isEqualToString:@"auth"]) {
@@ -66,10 +68,7 @@
             self.errorTextView.text = @"";
             self.errorTextView.hidden = YES;
             
-            NSLog(@"errorTextView: %@", self.errorTextView);
-            [self dismissViewControllerAnimated:YES completion:^{
-                
-            }];
+            [self dismissViewControllerAnimated:YES completion:nil];
             
         } else {
             // Some parameters were missing

@@ -7,7 +7,7 @@
         <!--First View Controller-->
         <scene sceneID="rV5-Y2-ghB">
             <objects>
-                <viewController id="rQl-PL-IFJ" customClass="PKFirstViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PKFirstViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="rQl-PL-IFJ" customClass="PKFirstViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="u74-83-jpD"/>
                         <viewControllerLayoutGuide type="bottom" id="XxU-JN-N8K"/>
