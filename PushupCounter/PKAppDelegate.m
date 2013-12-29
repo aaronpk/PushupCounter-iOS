@@ -7,8 +7,11 @@
 //
 
 #import "PKAppDelegate.h"
-#import "PKURLHelpers.h"
-#import "PKDataManager.h"
+#import "PKFirstViewController.h"
+
+@interface PKAppDelegate ()
+@property (strong, nonatomic) NSURL *launchURL;
+@end
 
 @implementation PKAppDelegate
 
@@ -38,6 +41,10 @@
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    if(self.launchURL) {
+        PKFirstViewController *mainView = (PKFirstViewController *)self.window.rootViewController;
+        [mainView launchAuthViewWithURL:self.launchURL];
+    }
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
@@ -45,36 +52,10 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
-// App launched by clicking a URL
+// App launched from a URL
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
 {
-    if([[url host] isEqualToString:@"auth"]) {
-        NSString *query = [[url query] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-        NSLog(@"Launched with URL: %@", query);
-        NSDictionary *params = [NSDictionary dictionaryWithFormEncodedString:query];
-        NSLog(@"%@", params);
-        
-        if([params objectForKey:@"error"]) {
-            // There was an error!
-            
-        } else if([params objectForKey:@"access_token"]
-                  && [params objectForKey:@"me"]
-                  && [params objectForKey:@"micropub_endpoint"]
-                  && [params objectForKey:@"scope"]) {
-            
-            // Got everything we need, store in NSUserDefaults and they are logged in!
-            NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-            [defaults setObject:[params objectForKey:@"micropub_endpoint"] forKey:PKAPIEndpointDefaultsName];
-            [defaults setObject:[params objectForKey:@"me"] forKey:PKAPIMeDefaultsName];
-            [defaults setObject:[params objectForKey:@"access_token"] forKey:PKAPIAccessTokenDefaultsName];
-            [defaults synchronize];
-            
-        } else {
-            // Some parameters were missing
-            
-        }
-    }
-    
+    self.launchURL = url;
     return YES;
 }
 

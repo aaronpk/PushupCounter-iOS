@@ -19,6 +19,8 @@
 		0FAC1884186E8C1100560D30 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FAC1883186E8C1100560D30 /* libsqlite3.0.dylib */; };
 		0FAC1887186E908500560D30 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FAC1885186E908500560D30 /* Main.storyboard */; };
 		0FAC188A186E92DC00560D30 /* PKFlipsideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FAC1889186E92DC00560D30 /* PKFlipsideViewController.m */; };
+		0FAC1897186F73DB00560D30 /* PKAuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FAC1895186F73DB00560D30 /* PKAuthViewController.m */; };
+		0FAC1898186F73DB00560D30 /* PKAuthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FAC1896186F73DB00560D30 /* PKAuthViewController.xib */; };
 		0FB19BBD180B410600214EFC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FB19BBC180B410600214EFC /* Foundation.framework */; };
 		0FB19BBF180B410600214EFC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FB19BBE180B410600214EFC /* CoreGraphics.framework */; };
 		0FB19BC1180B410600214EFC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FB19BC0180B410600214EFC /* UIKit.framework */; };
@@ -45,6 +47,9 @@
 		0FAC1886186E908500560D30 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = PushupCounter/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
 		0FAC1888186E92DC00560D30 /* PKFlipsideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PKFlipsideViewController.h; path = PushupCounter/PKFlipsideViewController.h; sourceTree = SOURCE_ROOT; };
 		0FAC1889186E92DC00560D30 /* PKFlipsideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PKFlipsideViewController.m; path = PushupCounter/PKFlipsideViewController.m; sourceTree = SOURCE_ROOT; };
+		0FAC1894186F73DB00560D30 /* PKAuthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PKAuthViewController.h; path = PushupCounter/PKAuthViewController.h; sourceTree = SOURCE_ROOT; };
+		0FAC1895186F73DB00560D30 /* PKAuthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PKAuthViewController.m; path = PushupCounter/PKAuthViewController.m; sourceTree = SOURCE_ROOT; };
+		0FAC1896186F73DB00560D30 /* PKAuthViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PKAuthViewController.xib; path = PushupCounter/PKAuthViewController.xib; sourceTree = SOURCE_ROOT; };
 		0FB19BB9180B410600214EFC /* PushupCounter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PushupCounter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FB19BBC180B410600214EFC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		0FB19BBE180B410600214EFC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -117,6 +122,9 @@
 				0FA2A616183E2608000A923B /* PKAppDelegate.h */,
 				0FA2A617183E2608000A923B /* PKAppDelegate.m */,
 				0FAC1885186E908500560D30 /* Main.storyboard */,
+				0FAC1894186F73DB00560D30 /* PKAuthViewController.h */,
+				0FAC1895186F73DB00560D30 /* PKAuthViewController.m */,
+				0FAC1896186F73DB00560D30 /* PKAuthViewController.xib */,
 				0FA2A619183E2613000A923B /* PKFirstViewController.h */,
 				0FA2A61A183E2613000A923B /* PKFirstViewController.m */,
 				0FAC1888186E92DC00560D30 /* PKFlipsideViewController.h */,
@@ -203,6 +211,7 @@
 				0FAC1887186E908500560D30 /* Main.storyboard in Resources */,
 				0FA2A622183E2623000A923B /* PushupCounter-Info.plist in Resources */,
 				0FA2A626183E263E000A923B /* InfoPlist.strings in Resources */,
+				0FAC1898186F73DB00560D30 /* PKAuthViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,6 +260,7 @@
 				0FAC188A186E92DC00560D30 /* PKFlipsideViewController.m in Sources */,
 				0FAC1882186E8BFE00560D30 /* PKDataManager.m in Sources */,
 				0FA2A61D183E2613000A923B /* PKFirstViewController.m in Sources */,
+				0FAC1897186F73DB00560D30 /* PKAuthViewController.m in Sources */,
 				0FA2A618183E2608000A923B /* PKAppDelegate.m in Sources */,
 				0FAC187F186E8BDD00560D30 /* LOLDatabase.m in Sources */,
 			);

@@ -7,6 +7,7 @@
 //
 
 #import "PKFlipsideViewController.h"
+#import "PKAuthViewController.h"
 #import "PKDataManager.h"
 
 @interface PKFlipsideViewController ()
@@ -38,6 +39,7 @@
 												 name:PKSendingFinishedNotification
 											   object:nil];
     [self refreshQueueCount];
+    [self refreshSignedInFields];
 }
 
 - (void)refreshQueueCount
@@ -45,6 +47,12 @@
     [[PKDataManager sharedManager] numberOfEntriesInQueue:^(long num) {
         self.entriesInQueueLabel.text = [NSString stringWithFormat:@"%ld unsent entries", num];
     }];
+}
+
+- (void)refreshSignedInFields
+{
+    self.usernameField.text = [[NSUserDefaults standardUserDefaults] stringForKey:PKAPIMeDefaultsName];
+    self.apiEndpointField.text = [[NSUserDefaults standardUserDefaults] stringForKey:PKAPIEndpointDefaultsName];
 }
 
 - (void)didReceiveMemoryWarning
@@ -64,7 +72,14 @@
 {
     NSURL *url = [NSURL URLWithString:@"http://indiewebcamp.com/micropub"];
     [[UIApplication sharedApplication] openURL:url];
-    
+}
+
+- (IBAction)signInWasTapped:(id)sender
+{
+    PKAuthViewController *authView = [[PKAuthViewController alloc] init];
+    [self presentViewController:authView animated:YES completion:^{
+        [self refreshSignedInFields];
+    }];
 }
 
 - (IBAction)sendNowWasTapped:(id)sender

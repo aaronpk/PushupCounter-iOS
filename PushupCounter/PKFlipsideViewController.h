@@ -19,6 +19,9 @@
 @property (weak, nonatomic) id <PKFlipsideViewControllerDelegate> delegate;
 - (IBAction)done:(id)sender;
 
+@property (strong, nonatomic) IBOutlet UITextField *usernameField;
+- (IBAction)signInWasTapped:(id)sender;
+
 @property (strong, nonatomic) IBOutlet UITextField *apiEndpointField;
 - (IBAction)apiEndpointHelpTapped:(id)sender;
 

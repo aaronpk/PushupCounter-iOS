@@ -27,6 +27,8 @@ static NSString *const PKSendingFinishedNotification = @"PKSendingFinishedNotifi
 @property (strong, nonatomic, readonly) CLLocationManager *locationManager;
 @property (strong, nonatomic, readonly) CLLocation *lastLocation;
 
++ (NSDateFormatter *)iso8601DateFormatter;
+
 // Call this if the API endpoint settings change to re-init the HTTP library
 - (void)setupHTTPClient;
 

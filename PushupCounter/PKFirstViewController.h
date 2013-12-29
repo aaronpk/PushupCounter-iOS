@@ -7,12 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PKAuthViewController.h"
 
 @interface PKFirstViewController : UIViewController
 
+@property (strong, nonatomic) PKAuthViewController *authViewController;
+- (void)launchAuthViewWithURL:(NSURL *)url;
+
 @property (strong, nonatomic) IBOutlet UIButton *countUpButton;
 @property (strong, nonatomic) IBOutlet UIButton *saveButton;
-@property (strong, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
 
 - (IBAction)countUpButtonTapped:(id)sender;
 - (IBAction)resetButtonTapped:(id)sender;

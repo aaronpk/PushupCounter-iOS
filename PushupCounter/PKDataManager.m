@@ -65,6 +65,8 @@ AFHTTPSessionManager *_httpClient;
         _httpClient.requestSerializer = [AFHTTPRequestSerializer serializer];
         _httpClient.responseSerializer = [AFHTTPResponseSerializer serializer];
         _httpClient.responseSerializer.acceptableStatusCodes = [[NSIndexSet alloc] initWithIndex:201];
+        
+        NSLog(@"Set up HTTP client with token: %@", [[NSUserDefaults standardUserDefaults] stringForKey:PKAPIAccessTokenDefaultsName]);
     }
 }
 
@@ -78,6 +80,30 @@ AFHTTPSessionManager *_httpClient;
     }
     
     return _locationManager;
+}
+
++ (NSDateFormatter *)iso8601DateFormatter {
+    static NSDateFormatter *iso8601;
+    
+    if (!iso8601) {
+        iso8601 = [[NSDateFormatter alloc] init];
+        
+        NSTimeZone *timeZone = [NSTimeZone localTimeZone];
+        NSInteger offset = [timeZone secondsFromGMT];
+        
+        NSMutableString *strFormat = [NSMutableString stringWithString:@"yyyy-MM-dd'T'HH:mm:ss"];
+        offset /= 60;
+        if (offset == 0) {
+            [strFormat appendString:@"Z"];
+        } else {
+            [strFormat appendFormat:@"%+03ld:%02ld", (long)(offset / 60), (long)(offset % 60)];
+        }
+        
+        [iso8601 setTimeStyle:NSDateFormatterFullStyle];
+        [iso8601 setDateFormat:strFormat];
+    }
+    
+    return iso8601;
 }
 
 #pragma mark LOLDB

@@ -12,6 +12,7 @@
 
 @interface PKFirstViewController ()
 @property (strong, nonatomic) NSString *lastEntryKey;
+@property (strong, nonatomic) NSURL *launchedWithAuthURL;
 @end
 
 @implementation PKFirstViewController {
@@ -23,9 +24,35 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     count = 0;
-    [self.spinner stopAnimating];
     [self updateButtonValue];
     [[PKDataManager sharedManager] requestLocation];
+    self.authViewController = [[PKAuthViewController alloc] initWithNibName:@"PKAuthViewController" bundle:[NSBundle mainBundle]];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    if(self.launchedWithAuthURL) {
+    } else {
+        if([[NSUserDefaults standardUserDefaults] stringForKey:PKAPIAccessTokenDefaultsName]) {
+            // Already logged in
+        } else {
+            [self launchAuthViewWithURL:nil];
+        }
+    }
+}
+
+- (void)launchAuthViewWithURL:(NSURL *)url
+{
+    NSLog(@"presentedViewController: %@", self.presentedViewController);
+    if(self.presentedViewController) {
+        NSLog(@"Modal auth view is already visible");
+    } else {
+        [self presentViewController:self.authViewController animated:YES completion:nil];
+    }
+    if(url) {
+        NSLog(@"Processing auth from URL: %@", url);
+        [self.authViewController processAuthRequestFromURL:url];
+    }
 }
 
 #pragma mark - Flipside View
@@ -57,8 +84,10 @@
 
 - (IBAction)countUpButtonTapped:(id)sender
 {
-    if(count == 0)
+    if(count == 0) {
         [[PKDataManager sharedManager] requestLocation];
+        NSLog(@"Requesting location");
+    }
 
     count++;
     [self updateButtonValue];
@@ -72,25 +101,25 @@
 
 - (IBAction)saveButtonWasTapped:(id)sender
 {
+    if(count == 0) {
+        return;
+    }
 
     NSString *userLocation = nil;
     CLLocation *loc;
     if((loc=[PKDataManager sharedManager].lastLocation)) {
-        userLocation = [NSString stringWithFormat:@"geo:%f,%f;u=%d;a=%d;s=%d;ts=%d", loc.coordinate.latitude, loc.coordinate.longitude, (int)round(loc.horizontalAccuracy), (int)round(loc.altitude), (int)round(loc.speed), (int)[loc.timestamp timeIntervalSince1970]];
+        userLocation = [NSString stringWithFormat:@"geo:%f,%f;u=%d;a=%d;s=%d;d=%@", loc.coordinate.latitude, loc.coordinate.longitude, (int)round(loc.horizontalAccuracy), (int)round(loc.altitude), (int)round(loc.speed), [[PKDataManager iso8601DateFormatter] stringFromDate:loc.timestamp]];
     }
 
     NSTimeZone *tz = [NSTimeZone localTimeZone];
     NSMutableDictionary *entry = [NSMutableDictionary dictionaryWithDictionary:@{
                             @"h": @"entry",
-                            @"published": [NSNumber numberWithLong:(long)[NSDate.date timeIntervalSince1970]],
-                            @"timezone": @{
-                                    @"offset": [NSNumber numberWithInteger:tz.secondsFromGMT],
-                                    @"abbr": tz.abbreviation,
-                                    @"name": tz.name,
-                                    },
+                            @"published": [[PKDataManager iso8601DateFormatter] stringFromDate:NSDate.new],
                             @"category": @"pushups",
                             @"count": [NSNumber numberWithInt:count],
-                            @"name": [NSString stringWithFormat:@"Just did %d push-ups!", count]
+                            @"name": [NSString stringWithFormat:@"Just did %d push-ups!", count],
+                            @"timezone_abbr": tz.abbreviation,
+                            @"timezone_name": tz.name,
                             }];
     if(userLocation) {
         [entry setObject:userLocation forKey:@"location"];
@@ -99,6 +128,8 @@
 
     [[PKDataManager sharedManager] addEntryToQueue:entry withKey:self.lastEntryKey];
     [[PKDataManager sharedManager] scheduleSend];
+    
+    [self.countUpButton setTitle:@"0" forState:UIControlStateNormal];
 }
 
 @end
