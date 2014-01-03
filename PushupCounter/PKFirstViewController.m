@@ -120,7 +120,7 @@
     [[PKDataManager sharedManager] addEntryToQueue:entry withKey:self.lastEntryKey];
     [[PKDataManager sharedManager] scheduleSend];
     
-    [self.countUpButton setTitle:@"0" forState:UIControlStateNormal];
+    [self resetButtonTapped:nil];
 }
 
 @end

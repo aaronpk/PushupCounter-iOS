@@ -182,9 +182,7 @@ AFHTTPSessionManager *_httpClient;
 
     __block long numEntries;
     [self numberOfEntriesInQueue:^(long num) {
-        if(num == 0) {
-            numEntries = num;
-        }
+        numEntries = num;
     }];
     
     if(numEntries == 0) {
