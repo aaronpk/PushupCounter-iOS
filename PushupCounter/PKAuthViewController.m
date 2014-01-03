@@ -29,8 +29,8 @@
 - (IBAction)signInButtonWasTapped:(id)sender
 {
     
-    NSString *authURL = [NSString stringWithFormat:@"http://bookmarker.dev/auth/start?me=%@&client_id=%@&redirect_uri=%@",
-                         self.usernameField.text, @"http://pushups.dev", @"pushups://auth"];
+    NSString *authURL = [NSString stringWithFormat:@"http://client.indieauth.com/auth/start?me=%@&client_id=%@&redirect_uri=%@",
+                         self.usernameField.text, @"http://marvelouslabs.com/pushup-counter", @"pushups://auth"];
     NSURL *url = [NSURL URLWithString:authURL];
     
     // Launch the native browser to the auth URL, which will redirect back to this app when auth is complete
