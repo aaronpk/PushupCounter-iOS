@@ -9,11 +9,11 @@
 
 `pod install`
 
-`cp PushupCounter/Config.example.h PushupCounter/Config.h`
-
-Edit `Config.h` and define your API endpoint to send to.
-
 `open PushupCounter.xcworkspace`
+
+### Authentication
+
+Authentication is handled via IndieAuth. Until a good tutorial is written, you can find some info on this process [here](https://github.com/indieweb/indieauth-client-php#usage-for-clients).
 
 
 ### Credits
