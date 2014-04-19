@@ -164,7 +164,7 @@ AFHTTPSessionManager *_httpClient;
             // If there is already a timer, cancel it and set a new timer
             [self.scheduleSendTimer invalidate];
         }
-        self.scheduleSendTimer = [NSTimer scheduledTimerWithTimeInterval:10.0 target:self selector:@selector(sendNowAfterSchedule) userInfo:nil repeats:NO];
+        self.scheduleSendTimer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(sendNowAfterSchedule) userInfo:nil repeats:NO];
     }
 }
 
